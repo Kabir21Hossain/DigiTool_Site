@@ -1,17 +1,17 @@
-# 🚀 DigiTools - Premium Digital Assets Marketplace
+#  DigiTools - Premium Digital Assets Marketplace
 
 DigiTools is a modern, high-performance web application designed for browsing and purchasing premium digital assets. Built with the latest technologies like **React 19** and **Tailwind CSS v4**, it offers a seamless user experience with real-time cart updates and smooth navigation.
 
 ---
 
-## 🔗 Project Links
+##  Project Links
 
 - **Live Site**: [https://digitoolkabir.netlify.app/](https://digitoolkabir.netlify.app/)
 - **GitHub Repository**: [https://github.com/Kabir21Hossain/DigiTool_Site](https://github.com/Kabir21Hossain/DigiTool_Site)
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 - **Dynamic Product Display**: Browse through a curated collection of premium digital tools fetched dynamically.
 - **Advanced Cart System**: 
@@ -30,7 +30,7 @@ DigiTools is a modern, high-performance web application designed for browsing an
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **Framework**: React 19 (using the new `use` hook and `Suspense`)
 - **Styling**: Tailwind CSS v4 & DaisyUI v5
@@ -41,26 +41,26 @@ DigiTools is a modern, high-performance web application designed for browsing an
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
-### 🖥️ Desktop View - Hero Section
+###  Desktop View - Hero Section
 ![Hero Section](./src/images/1.jpg)
 
-### 📦 Premium Products Grid
+###  Premium Products Grid
 ![Products Grid](./src/images/2.jpg)
 
-### 🛒 Cart Management View
+###  Cart Management View
 ![Cart View](./src/images/4.jpg)
 
-### 📱 Responsive Design & Mobile UI
+###  Responsive Design & Mobile UI
 ![Mobile View](./src/images/5.jpg)
 
-### 🔔 Real-time Notifications
+###  Real-time Notifications
 ![Toast Notifications](./src/images/6.jpg)
 
 ---
 
-## ⚙️ Local Installation & Setup
+##  Local Installation & Setup
 
 1. **Clone the repository**:
    ```bash
@@ -89,4 +89,4 @@ DigiTools is a modern, high-performance web application designed for browsing an
 
 ---
 
-Developed with ❤️ by [Kabir Hossain](https://github.com/Kabir21Hossain)
+Developed with  by [Kabir Hossain](https://github.com/Kabir21Hossain)
