@@ -2,9 +2,9 @@ import Banner from '../../assets/banner.png'
 import play from '../../assets/play.png'
 const Hero = () => {
     return (
-        <div className="container mx-auto py-[60px] flex flex-col-reverse sm:flex-row sm:gap-[60px] gap-[20px] items-center">
-            <div className="left pl-[20px]">
-                <div className="space-y-8 py-40">
+        <div className="container mx-auto py-10 sm:py-[60px] flex flex-col-reverse sm:flex-row sm:gap-[60px] gap-0 items-center">
+            <div className="left pl-[20px] text-center sm:text-start">
+                <div className="space-y-8 py-20 sm:py-40">
                     <div className="space-y-4">
                         
                         <div className="inline-flex items-center gap-2 bg-[#E1E7FF] text-purple-700 text-sm font-medium px-4 py-2 rounded-full mb-8">
@@ -26,7 +26,7 @@ const Hero = () => {
 
                         
                         
-                        <div className="flex items-center justify-start gap-2">
+                        <div className="flex items-center justify-center sm:justify-start gap-2">
                             <button className="btn bg-linear-to-r from-[#4f39f6] 100% to-[#9514fa] 100% transition-all duration-300 text-white py-2 sm:py-0 text-sm sm:text-md rounded-full">
                                 Explore Products
                             </button>
