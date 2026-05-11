@@ -2,7 +2,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { SlOptions } from "react-icons/sl";
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm sticky top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center gap-3">
         <div className="logo font-bold text-2xl bg-linear-to-r from-[#4f39f6] 100% to-[#9514fa] 100% text-transparent bg-clip-text">DigiTools</div>
 
