@@ -1,13 +1,13 @@
 import { use, useState } from 'react';
 import ProductCard from "./ProductCard";
-import { ImFileEmpty } from "react-icons/im";
+import { IoCartOutline } from "react-icons/io5";
+import { toast } from 'react-toastify';
 
 
 
-const PremiumTools = ({ toolPromise, handleBuy, cart }) => {
+const PremiumTools = ({ toolPromise, handleBuy, cart,setCart, tab, setTab }) => {
     const data = use(toolPromise);
     const { products } = data;
-    const [tab, setTab] = useState("products");
 
     const handleCart = (btnType) => {
         if (btnType == "cart") {
@@ -18,11 +18,29 @@ const PremiumTools = ({ toolPromise, handleBuy, cart }) => {
             setTab('products');
 
         }
+    }
 
+    const handleRemove=(id)=>{
+        const newCart=cart.filter(item=>item.id!==id);
+        if(cart.length>0){
+            toast.success('item is removed');
+        }
+        setCart([...newCart]);
+        if(newCart.length===0){
+            toast.warn('your cart is empty');
+        }
+       
+    }
+
+    const handleCheckout=()=>{
+        toast.success('Proceed to Checkout');
+        setCart([]);
     }
 
     return (
+        <>
         <div id="products" className="max-w-5xl mx-auto px-2 py-[120px]">
+            
             {/* Header */}
             <div className="text-center mb-5">
                 <h2 className="text-4xl font-extrabold text-[#101727] mb-4">
@@ -65,13 +83,13 @@ const PremiumTools = ({ toolPromise, handleBuy, cart }) => {
                         {
                             cart.map(item => <div key={item.id} className="flex flex-row justify-between items-center p-5 shadow-xl bg-gray-100 rounded-md">
                                 <div className="flex flex-row items-center gap-2">
-                                    <span>{item.icon}</span>
+                                    <span className=" w-8 h-8 bg-white rounded-full flex justify-center items-center">{item.icon}</span>
                                     <div className="flex flex-col gap-3">
                                         <h2 className="text-md text-black font-semibold">{item.name}</h2>
                                         <p className="text-sm text-gray-600">${item.price}</p>
                                     </div>
                                 </div>
-                                <span className="text-red-500 cursor-pointer font-semibold text-sm">Remove</span>
+                                <span className="text-red-500 cursor-pointer font-semibold text-sm" onClick={()=>handleRemove(item.id)}>Remove</span>
                             </div>)
                         }
                         <div className="total flex justify-between items-center">
@@ -79,7 +97,7 @@ const PremiumTools = ({ toolPromise, handleBuy, cart }) => {
                             <p className="text-lg font-semibold text-black">${cart.reduce((total,item)=>total+item.price,0)}</p>
                         </div>
 
-                        <button className="btn bg-linear-to-r from-[#4F39F6] to-[#9514fa] text-white border-none w-full rounded-full" onClick={handleCheckout}>Proceed To Checkout</button>
+                        <button className="btn bg-linear-to-r from-[#4F39F6] to-[#9514fa] text-white border-none w-full rounded-full" onClick={()=>handleCheckout()}>Proceed To Checkout</button>
                     </div>
 
                 )
@@ -89,14 +107,16 @@ const PremiumTools = ({ toolPromise, handleBuy, cart }) => {
 
             {
                 tab==='cart' && cart.length ===0 && (
+                    
                     <div className="p-10 container mx-auto space-y-6 shadow-md border-gray-300 border-[1px] rounded-md">
                         <h3 className="text-md text-black font-semibold">Your Cart</h3>
-                        <div className=" max-w-4xl mx-auto flex items-center justify-center"><ImFileEmpty size={90}/></div>
-                        <p className="text-sm max-w-4xl mx-auto flex items-center justify-center text-gray-600">Your cart is empty.Please add some products to your cart.</p>
+                        <div className=" max-w-4xl mx-auto flex items-center justify-center"><IoCartOutline size={90}/></div>
+                        <p className="text-sm max-w-4xl mx-auto flex items-center justify-center text-gray-600 tracking-wide">Your cart is empty.Please add some products to your cart.</p>
                     </div>
                 )
             }
         </div>
+        </>
     );
 };
 

@@ -21,6 +21,7 @@ const toolPromise = fetchPromise();
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [tab, setTab] = useState("products");
 
   const handleBuy = (product) => {
     const isExist = cart.find(item => item.id === product.id);
@@ -36,18 +37,17 @@ function App() {
  
   return (
    <>
-   <ToastContainer/>
-   <Navbar cartCount={cart.length}></Navbar>
+   <Navbar cartCount={cart.length} setTab={setTab}></Navbar>
    <Hero></Hero>
    <Rating ></Rating>
    <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>}>
-     <PremiumTools toolPromise={toolPromise} handleBuy={handleBuy} cart={cart}></PremiumTools>
+     <PremiumTools toolPromise={toolPromise} handleBuy={handleBuy} cart={cart} setCart={setCart} tab={tab} setTab={setTab}></PremiumTools>
    </Suspense>
    <GetStarted></GetStarted>
    <Pricing></Pricing>
    <Workflow></Workflow>
    <Footer></Footer>
-  
+   <ToastContainer position="top-right" autoClose={2000} />
    </>
   )
 }

@@ -1,6 +1,6 @@
 import { IoCartOutline } from "react-icons/io5";
 import { SlOptions } from "react-icons/sl";
-const Navbar = ({ cartCount }) => {
+const Navbar = ({ cartCount, setTab }) => {
   return (
     <div className="navbar bg-base-100 shadow-sm sticky top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center gap-3">
@@ -8,7 +8,7 @@ const Navbar = ({ cartCount }) => {
 
         <div className="mid hidden sm:block ">
           <ul className="flex gap-4 items-center">
-            <li><a href="#products" className=" text-sm hover:text-primary cursor-pointer font-semibold sm:text-4">Products</a></li>
+            <li><a href="#products" onClick={() => setTab('products')} className=" text-sm hover:text-primary cursor-pointer font-semibold sm:text-4">Products</a></li>
             <li><a href="#features" className=" text-sm hover:text-primary cursor-pointer font-semibold sm:text-4">Features</a></li>
             <li><a href="#pricing" className=" text-sm hover:text-primary cursor-pointer font-semibold sm:text-4">Pricing</a></li>
             <li><a href="#testimonials" className=" text-sm hover:text-primary cursor-pointer font-semibold sm:text-4">Testimonials</a></li>
@@ -18,7 +18,7 @@ const Navbar = ({ cartCount }) => {
 
         <div className="right sm:gap-2 justify-center items-center hidden sm:flex">
 
-          <div className="relative">
+          <div className="relative" onClick={() => { setTab('cart'); window.location.href = "#products"; }}>
             <IoCartOutline className="text-sm sm:text-2xl cursor-pointer hover:text-primary transition-all duration-300 hover:scale-103" />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">

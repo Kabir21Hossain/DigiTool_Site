@@ -51,7 +51,7 @@ const ProductCard = ({ product, handleBuy, isBuy }) => {
       <button 
         className={`mt-auto btn px-8 py-3 rounded-full font-medium transition-all duration-300 ${
           isBuy 
-            ? "bg-gray-400 text-white border-none hover:bg-green-600" 
+            ? "bg-green-600 text-white border-none hover:bg-green-700" 
             : "bg-linear-to-r from-[#4F39F6] to-[#9514fa] text-white border-none"
         }`} 
         onClick={() => { handleBuy(product); }}
