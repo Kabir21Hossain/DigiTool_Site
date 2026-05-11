@@ -23,7 +23,7 @@ const Navbar = () => {
           <button className=" btn btn-primary bg-linear-to-r from-[#4f39f6] 100% to-[#9514fa] 100% transition-all duration-300 text-white py-2 sm:py-0 text-sm sm:text-md rounded-full ">Get Started</button>
         </div>
 
-        <div className="sm:hidden"><SlOptions /></div>
+        <div className="sm:hidden"><SlOptions/></div>
 
       </div>
     </div>
