@@ -7,7 +7,9 @@ import Pricing from './components/Pricing/pricing';
 import Workflow from './components/workflow/Workflow';
 import Footer from './components/footer/Footer';
 import PremiumTools from './components/premiumComponents/PremiumTools';
-import { Suspense } from 'react';
+import { Suspense,useState} from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const fetchPromise = async () => {
     const res = await fetch("data.json");
@@ -16,15 +18,30 @@ const fetchPromise = async () => {
 
 const toolPromise = fetchPromise();
 
+
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const handleBuy = (product) => {
+    const isExist = cart.find(item => item.id === product.id);
+    if (!isExist) {
+      setCart([...cart, product]);
+      toast.success("Product added to cart!",{autoClose: 2000});
+    } else {
+      toast.error("Product already added to cart!",{autoClose: 2000});
+    }
+  }
+
+
  
   return (
    <>
-   <Navbar></Navbar>
+   <ToastContainer/>
+   <Navbar cartCount={cart.length}></Navbar>
    <Hero></Hero>
    <Rating ></Rating>
    <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>}>
-     <PremiumTools toolPromise={toolPromise}></PremiumTools>
+     <PremiumTools toolPromise={toolPromise} handleBuy={handleBuy} cart={cart}></PremiumTools>
    </Suspense>
    <GetStarted></GetStarted>
    <Pricing></Pricing>

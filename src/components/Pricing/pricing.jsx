@@ -3,7 +3,7 @@ import { FaCheck } from "react-icons/fa6";
 
 const Pricing = () => {
     return (
-        <div className=" bg-white py-[120px] px-6">
+        <div id="pricing" className=" bg-white py-[120px] px-6">
             <div className="max-w-5xl mx-auto">
 
                 {/* Header */}
