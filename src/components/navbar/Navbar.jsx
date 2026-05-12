@@ -68,7 +68,7 @@ const Navbar = ({ cartCount, setTab }) => {
               )}
             </div>
             <span className=" text-sm hover:text-primary cursor-pointer font-semibold sm:text-4 transition-all duration-300 hover:scale-103 btn w-full btn-soft btn-primary border-b-1 border-b-gray-400">Login</span>
-            <button className=" btn btn-primary btn-soft text-xs w-full">Get Started</button>
+            <button className=" btn btn-primary btn-soft text-sm w-full">Get Started</button>
           </div>) : ('')
         }
 
